@@ -140,21 +140,21 @@
 
 	.push-hideable {
 		transition-property: transform;
-		transform: translateX(0%) scale(100%);
+		transform: translateX(0%) scale(1);
 		transition-duration: 1.5s;
 		transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
 	.push-hidden {
-		transform: translateX(100%) scale(100%); }
+		transform: translateX(100%) scale(1); }
 
 	.push-hideable.hideable-screen {
 		transition-property: transform, -webkit-mask-position, mask-position, opacity;
 		transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.000, 0.675, 1.000, 0.740), cubic-bezier(0.000, 0.675, 1.000, 0.740), cubic-bezier(0.64, 0, 0.78, 0);
 		opacity: 1; }
 	.push-hideable.hideable-screen.hidden {
-		transform: translateX(min(-280px, -40%)) scale(100%);
+		transform: translateX(min(-280px, -40%)) scale(1);
 		opacity: 0%; }
 	showcase-item-view:last-of-type.push-hideable.hideable-screen.hidden {
-		transform: translateX(min(-280px, -40%)) scale(90%); }
+		transform: translateX(min(-280px, -40%)) scale(0.9); }
 
 	@media (max-aspect-ratio: 1/1) {
 		.hideable-screen {
@@ -189,21 +189,21 @@
 
 		.push-hideable {
 			transition-property: transform;
-			transform: translateY(0%) scale(100%);
+			transform: translateY(0%) scale(1);
 			transition-duration: 1.5s;
 			transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
 		.push-hidden {
-			transform: translateY(-100%) scale(100%); }
+			transform: translateY(-100%) scale(1); }
 
 		.push-hideable.hideable-screen {
 			transition-property: transform, -webkit-mask-position, mask-position, opacity;
 			transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.000, 0.675, 1.000, 0.740), cubic-bezier(0.000, 0.675, 1.000, 0.740), cubic-bezier(0.64, 0, 0.78, 0);
 			opacity: 1; }
 		.push-hideable.hideable-screen.hidden {
-			transform: translateY(min(200px, 40%)) scale(100%);
+			transform: translateY(min(200px, 40%)) scale(1);
 			opacity: 0%; }
 		showcase-item-view:last-of-type.push-hideable.hideable-screen.hidden {
-			transform: translateY(min(200px, 40%)) scale(90%); }
+			transform: translateY(min(200px, 40%)) scale(0.9); }
 
 		showcase-item-view.landscape > x-layout[_for=content] {
 			height: unset;
