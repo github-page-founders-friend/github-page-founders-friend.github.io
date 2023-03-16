@@ -1,0 +1,606 @@
+<!doctype html>
+<meta charset="UTF-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founders' Friend</title>
+<meta name="description" content="we make happy users - talk to us! we want to help you too.">
+
+<meta property="og:title" content="Founders’ Friend">
+<meta property="og:description" content="we make happy users - talk to us! we want to help you too.">
+<meta property="og:image" content="https://founders-friend.com/logo.png">
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://founders-friend.com">
+
+<link rel="canonical" href="https://founders-friend.com">
+<link rel="icon" type="image/png" sizes="48x48" href="/icon.png">
+<meta name="theme-color" content="#A5DEE4">
+
+<link rel="preload" href="SeoulHangang CM-subset.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="SeoulNamsan CBL-subset.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="gradient-dissolve-mask.png" as="image" type="image/png" media="(min-aspect-ratio: 1/1)" crossorigin>
+<link rel="preload" href="gradient-dissolve-mask-rotated.png" as="image" type="image/png" media="(max-aspect-ratio: 1/1)" crossorigin>
+
+<style>
+	html, body {
+		margin: 0;
+
+		width: 100%;
+		height: 100%;
+		width: -webkit-fill-available;
+		height: -webkit-fill-available;
+		overflow-x: hidden; }
+
+	@media screen and (min--moz-device-pixel-ratio: 0) {
+		html {
+			overflow-x: unset;
+			background-color: unset !important; } }
+
+	* {
+		box-sizing: border-box;
+		flex-shrink: 0; }
+
+	@font-face {
+		font-family: 'SeoulHangang CM';
+		src:
+			url('SeoulHangang CM-subset.woff2') format('woff2'),
+			url('SeoulHangang CM-subset.ttf') format('truetype')
+			; }
+	@font-face {
+		font-family: 'SeoulNamsan CBL';
+		src:
+			url('SeoulNamsan CBL-subset.woff2') format('woff2'),
+			url('SeoulNamsan CBL-subset.ttf') format('truetype')
+			; }
+
+	html {
+		transition-property: background-color;
+		transition-duration: 1.5s;
+		transition-timing-function: linear;
+		background-color: transparent; }
+	body {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		font-family: SeoulHangang CM;
+
+		transition-property: background-color, color;
+		transition-duration: 1.5s;
+		transition-timing-function: linear;
+		background-color: transparent;
+		color: #000000;
+
+		overflow-y: auto; }
+	a {
+		transition-property: color;
+		transition-duration: 1.5s;
+		transition-timing-function: linear;
+		color: #000000; }
+	body[dark] {
+		color: #DDDDDD; }
+	body[dark] a {
+		color: #DDDDDD; }
+
+	body:before {
+		content: ' ';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		height: min(620px, max(320px, 77.88%));
+		background: linear-gradient(180deg, #86A697 0%, #A5DEE4 0.01%, rgba(165, 222, 228, 0.15) 36.98%, rgba(244, 167, 185, 0.05) 65.62%, rgba(165, 222, 228, 0) 100%);
+		z-index: -1;
+		transition-property: opacity;
+		transition-duration: 1.5s;
+		transition-timing-function: linear;
+		opacity: 1; }
+	body[style]:before {
+		opacity: 0; }
+
+	i:before {
+		content: ' ';
+		display: inline-block;
+		white-space: pre; }
+	span {
+		display: inline-block;
+		white-space: nowrap; }
+
+	.hideable-screen {
+		width: 100vw;
+		-webkit-mask-image: url(gradient-dissolve-mask.png);
+		-webkit-mask-size: 400vw 100vw;
+		-webkit-mask-position: 0% 0;
+		-webkit-mask-repeat: repeat-x;
+		-webkit-mask-origin: border-box;
+		mask-image: url(gradient-dissolve-mask.png);
+		-webkit-mask-size: 400vw 100vw;
+		mask-position: 0% 0;
+		mask-repeat: repeat-x;
+		mask-origin: border-box;
+		mask-type: alpha;
+		transition-property: -webkit-mask-position, mask-position;
+		transition-duration: 1.5s;
+		transition-timing-function: cubic-bezier(0.000, 0.675, 1.000, 0.740); }
+	.prehidden {
+		transition-duration: 0s;
+		-webkit-mask-position: -66.666% 0;
+		mask-position: -66.666% 0; }
+	.hidden {
+		-webkit-mask-position: 66.666% 0;
+		mask-position: 66.666% 0; }
+	.unhidden {
+		-webkit-mask-position: 133.333% 0;
+		mask-position: 133.333% 0; }
+	.rehidden {
+		-webkit-mask-position: 200% 0;
+		mask-position: 200% 0; }
+
+	.push-hideable {
+		transition-property: transform;
+		transform: translateX(0%) scale(100%);
+		transition-duration: 1.5s;
+		transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+	.push-hidden {
+		transform: translateX(100%) scale(100%); }
+
+	.push-hideable.hideable-screen {
+		transition-property: transform, -webkit-mask-position, mask-position, opacity;
+		transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.000, 0.675, 1.000, 0.740), cubic-bezier(0.000, 0.675, 1.000, 0.740), cubic-bezier(0.64, 0, 0.78, 0);
+		opacity: 1; }
+	.push-hideable.hideable-screen.hidden {
+		transform: translateX(min(-280px, -40%)) scale(100%);
+		opacity: 0%; }
+	showcase-item-view:last-of-type.push-hideable.hideable-screen.hidden {
+		transform: translateX(min(-280px, -40%)) scale(90%); }
+
+	@media (max-aspect-ratio: 1/1) {
+		.hideable-screen {
+			height: 100%;
+			-webkit-mask-image: url(gradient-dissolve-mask-rotated.png);
+			-webkit-mask-size: 100vh 400vh;
+			-webkit-mask-position: 0% 100vh;
+			-webkit-mask-repeat: repeat-y;
+			-webkit-mask-origin: border-box;
+			mask-image: url(gradient-dissolve-mask-rotated.png);
+			mask-size: cover;
+			mask-position: 0 0;
+			mask-repeat: repeat-y;
+			mask-origin: border-box;
+			mask-type: alpha;
+			transition-property: -webkit-mask-position, mask-position;
+			transition-duration: 1.5s;
+			transition-timing-function: cubic-bezier(0.000, 0.675, 1.000, 0.740); }
+		.prehidden {
+			transition-duration: 0s;
+			-webkit-mask-position: 0 -100vh;
+			mask-position: 0 -100vh; }
+		.hidden {
+			-webkit-mask-position: 0 300vh;
+			mask-position: 0 300vh; }
+		.unhidden {
+			-webkit-mask-position: 0 500vh;
+			mask-position: 0 500vh; }
+		.rehidden {
+			-webkit-mask-position: 0 700vh;
+			mask-position: 0 700vh; }
+
+		.push-hideable {
+			transition-property: transform;
+			transform: translateY(0%) scale(100%);
+			transition-duration: 1.5s;
+			transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+		.push-hidden {
+			transform: translateY(-100%) scale(100%); }
+
+		.push-hideable.hideable-screen {
+			transition-property: transform, -webkit-mask-position, mask-position, opacity;
+			transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.000, 0.675, 1.000, 0.740), cubic-bezier(0.000, 0.675, 1.000, 0.740), cubic-bezier(0.64, 0, 0.78, 0);
+			opacity: 1; }
+		.push-hideable.hideable-screen.hidden {
+			transform: translateY(min(200px, 40%)) scale(100%);
+			opacity: 0%; }
+		showcase-item-view:last-of-type.push-hideable.hideable-screen.hidden {
+			transform: translateY(min(200px, 40%)) scale(90%); }
+
+		showcase-item-view.landscape > x-layout[_for=content] {
+			height: unset;
+			width: 80%; }
+		showcase-item-view.landscape video {
+			height: auto;
+			width: 100%; }
+		}
+
+	svg[_for=logo] {
+		width: auto;
+		transition-property: filter;
+		transition-duration: 1.5s;
+		transition-timing-function: linear;
+		filter: invert(0%); }
+	body[dark] svg[_for=logo] {
+		filter: invert(86.6667%); }
+
+	actions-view > x-layout {
+		font-family: SeoulNamsan CBL; }
+
+
+	body > svg[_for=logo] {
+		height: min(82px, max(54px, 9.86%));
+		align-self: center;
+
+		margin-top: min(60px, max(40px, 4.6875vw));
+
+		transition-property: filter, opacity;
+		transition-duration: 1.5s, 0.5s;
+		opacity: 1; }
+
+	body[style] > svg[_for=logo] {
+		opacity: 0; }
+
+	showcase-view {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		z-index: 1;
+		}
+	showcase-item-view {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center; }
+
+	showcase-item-view video {
+		height: 100%;
+		width: auto;
+		box-shadow: 0px 0px 60px #FFFFFF; }
+
+	showcase-item-view > x-layout[_for=content] {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		height: 62.81%;
+	}
+
+	showcase-item-view > x-layout[_for=content] > x-label {
+		font-size: min(24px, max(18px, 1.875vw));
+		line-height: 1.2em;
+		white-space: pre-line;
+		font-weight: 100;
+		opacity: 0.25;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		right: calc(100% + 48px);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end; }
+	showcase-item-view.push-hidden > x-layout[_for=content] > x-label {
+		right: calc(100% + 48.01px); }
+
+	@media (max-width: 819px) {
+		showcase-item-view > x-layout[_for=content] > x-label {
+			left: 0;
+			top: calc(100% + 30px); } }
+
+
+	body > x-layout[_for=content] {
+		display: flex;
+		flex-direction: column;
+
+		align-self: stretch;
+
+		padding: min(40px, max(30px, 3.125vw)) 9.375vw;
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100vw;
+
+		justify-content: flex-end; }
+
+
+	services-display {
+		font-size: min(24px, max(18px, 1.875vw));
+		line-height: 1em;
+		display: flex;
+		margin-left: min(-10px, max(-20px, calc(-23.33px + 1.04vw))); }
+
+
+	body > x-layout[_for=content] + x-layout[_for=content] {
+		top: 100%; }
+
+
+	hook-display {
+		font-size: min(24px, max(18px, 1.875vw));
+		line-height: 1em;
+		display: flex;
+		flex-direction: column; }
+
+	p {
+		margin: 0; }
+
+	ul {
+		margin: 0; }
+
+	hook-display > p + p {
+		margin-top: 1em; }
+	hook-display > ul {
+		margin-top: 0.2em; }
+
+	hook-display + hook-display {
+		margin-top: min(80px, max(60px, 6.25vw));
+
+		flex: 1; }
+
+
+	actions-view {
+		display: flex;
+		flex-direction: column;
+		align-items: center; }
+	actions-view:last-child {
+		margin-bottom: min(80px, max(60px, 6.25vw)); }
+
+	actions-view > x-label {
+		font-size: min(36px, max(24px, 2.8125vw));
+		text-align: center;
+		margin-left: 2px;
+		margin-right: 2px; }
+
+	actions-view > x-label + x-layout {
+		margin-top: min(36px, max(24px, 2.8125vw)); }
+
+	actions-view > x-layout {
+		font-size: min(24px, max(18px, 1.875vw));
+		text-align: center;
+		user-select: none;
+		margin-left: 50px;
+		margin-right: 50px; }
+	actions-view > x-layout a {
+		position: relative; }
+
+	actions-view > x-layout a:after {
+		content: 'copied';
+		position: absolute;
+		top: calc(100% + 4px);
+		left: 50%;
+		transform: translateX(-50%);
+		background: #000000;
+		color: #DDDDDD;
+		padding: 8px 12px;
+		font-family: SeoulHangang CM;
+		font-size: 12px;
+		font-weight: unset;
+		white-space: nowrap;
+		border-radius: 8px;
+		transition-property: background-color, color, opacity;
+		transition-duration: 1.5s, 1.5s, 0.2s;
+		transition-timing-function: linear;
+		opacity: 0;
+		z-index: 1; }
+
+	body[dark] actions-view > x-layout a:after {
+		background: #DDDDDD;
+		color: #000000; }
+
+	actions-view > x-layout a[copied]:after {
+		opacity: 1; }
+
+	actions-view > x-layout + svg[_for=logo] {
+		margin-top: 24px; }
+
+	actions-view > svg[_for=logo] {
+		height: min(32px, max(24px, 2.5vw)); }
+
+	</style>
+
+
+<svg _for="logo" width="228" height="73" viewBox="0 0 228 73" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4522 5.60293H4.64599V15.0859H16.1203V18.879H4.64599V35H0.283843V1.80976H16.4522V5.60293ZM53.6127 18.4049C53.6127 23.336 51.969 27.4611 48.6816 30.7801C45.4258 34.0675 41.3323 35.7112 36.4012 35.7112C31.4385 35.7112 27.2344 34.0675 23.7889 30.7801C20.3751 27.4611 18.6681 23.336 18.6681 18.4049C18.6681 13.695 20.4067 9.63317 23.8837 6.21932C27.3608 2.80546 31.5333 1.09854 36.4012 1.09854C41.1743 1.09854 45.2361 2.80546 48.5868 6.21932C51.9374 9.63317 53.6127 13.695 53.6127 18.4049ZM49.298 18.4049C49.298 14.7381 48.0652 11.6088 45.5996 9.01678C43.1341 6.42478 40.0363 5.12878 36.3064 5.12878C32.4184 5.12878 29.2416 6.40898 26.776 8.96937C24.3105 11.5298 23.0777 14.6433 23.0777 18.31C23.0777 22.1032 24.3737 25.2642 26.9657 27.793C29.5577 30.3218 32.6712 31.5861 36.3064 31.5861C39.9415 31.5861 43.0076 30.3218 45.5048 27.793C48.0336 25.2326 49.298 22.1032 49.298 18.4049ZM81.6036 22.7196C81.6036 26.5128 80.5763 29.5947 78.5217 31.9655C76.3406 34.4626 73.3377 35.7112 69.5129 35.7112C65.6881 35.7112 62.6852 34.4626 60.5041 31.9655C58.4495 29.6263 57.4222 26.5444 57.4222 22.7196V1.80976H61.7369V22.1506C61.7369 24.9955 62.2743 27.224 63.349 28.8361C64.645 30.7959 66.6996 31.7758 69.5129 31.7758C72.3262 31.7758 74.3808 30.8117 75.6768 28.8835C76.7515 27.2714 77.2889 25.0271 77.2889 22.1506V1.80976H81.6036V22.7196ZM116.448 36.2802L91.65 10.7237V35H87.2878V0.624391L112.228 25.849V1.80976H116.448V36.2802ZM147.853 18.2152C147.853 23.6837 146.146 27.8878 142.732 30.8275C139.508 33.6092 135.114 35 129.551 35H122.154V1.80976H130.073C135.478 1.80976 139.745 3.16898 142.874 5.88742C146.193 8.7639 147.853 12.8732 147.853 18.2152ZM143.491 18.2152C143.491 13.9479 142.163 10.7395 139.508 8.59005C137.074 6.59864 133.66 5.60293 129.266 5.60293H126.516V31.2068H129.646C133.597 31.2068 136.821 30.1637 139.318 28.0775C142.1 25.7383 143.491 22.4509 143.491 18.2152ZM170.13 35H152.113V1.80976H170.13V5.60293H156.475V15.0859H169.703V18.879H156.475V31.2068H170.13V35ZM195.299 35H190.225L180.553 20.7756H178.561V35H174.199V1.80976H179.699C181.849 1.80976 183.619 1.90459 185.01 2.09425C186.401 2.25229 187.76 2.71064 189.087 3.46927C190.415 4.19629 191.411 5.27103 192.075 6.69347C192.738 8.08429 193.07 9.68059 193.07 11.4823C193.07 13.695 192.312 15.6548 190.794 17.3618C189.309 19.0371 187.412 20.1118 185.105 20.586L195.299 35ZM188.85 11.5298C188.85 9.0642 188.044 7.37307 186.432 6.45639C185.231 5.76098 183.429 5.41327 181.027 5.41327H178.561V17.3618H180.458C182.765 17.3618 184.615 16.9982 186.005 16.2712C187.902 15.2913 188.85 13.7108 188.85 11.5298ZM217.311 25.1852C217.311 28.2197 216.237 30.7327 214.087 32.7241C211.938 34.7155 209.282 35.7112 206.122 35.7112C204.004 35.7112 201.933 35.1422 199.91 34.0043C199.12 33.5618 197.808 32.6293 195.975 31.2068L198.488 27.7456C200.226 29.0732 201.475 29.9582 202.234 30.4008C203.656 31.191 205.094 31.5861 206.548 31.5861C208.35 31.5861 209.836 31.033 211.005 29.9266C212.175 28.8203 212.76 27.4295 212.76 25.7541C212.76 24.1737 212.017 22.846 210.531 21.7713C209.772 21.234 208.334 20.5543 206.216 19.7325L203.846 18.8316C201.633 17.9781 200.005 16.935 198.962 15.7022C197.761 14.2798 197.16 12.4148 197.16 10.1073C197.16 7.42049 198.093 5.25522 199.958 3.61151C201.854 1.9362 204.146 1.09854 206.833 1.09854C208.729 1.09854 210.373 1.36722 211.764 1.90459C213.155 2.41034 214.482 3.248 215.747 4.41756L213.281 7.784C212.428 6.8041 211.4 6.06127 210.199 5.55551C208.998 5.01815 207.813 4.74946 206.643 4.74946C205.284 4.74946 204.114 5.27103 203.134 6.31415C202.186 7.32566 201.712 8.49522 201.712 9.82283C201.712 11.0872 202.107 12.1461 202.897 12.9996C203.53 13.6634 204.399 14.2166 205.505 14.6591L207.923 15.6074C211.811 17.0931 214.387 18.5945 215.652 20.1118C216.758 21.471 217.311 23.1621 217.311 25.1852ZM227.02 7.97366C227.02 9.26966 226.688 10.5182 226.025 11.7194C225.361 12.889 224.46 13.8531 223.322 14.6117L221.852 12.6203C222.8 11.7352 223.433 10.945 223.749 10.2496C224.096 9.55415 224.27 8.73229 224.27 7.784C224.27 7.37307 224.191 7.136 224.033 7.07278C223.97 7.04117 223.796 7.02537 223.512 7.02537H221.568V1.80976H227.02V7.97366ZM16.4522 41.6029H4.64599V51.0859H16.1203V54.879H4.64599V71H0.283843V37.8098H16.4522V41.6029ZM41.6642 71H36.5909L26.9183 56.7756H24.9269V71H20.5647V37.8098H26.0648C28.2143 37.8098 29.9844 37.9046 31.3752 38.0942C32.7661 38.2523 34.1253 38.7106 35.4529 39.4693C36.7805 40.1963 37.7762 41.271 38.44 42.6935C39.1038 44.0843 39.4357 45.6806 39.4357 47.4823C39.4357 49.695 38.6771 51.6548 37.1598 53.3618C35.6742 55.0371 33.7776 56.1118 31.4701 56.586L41.6642 71ZM35.2158 47.5298C35.2158 45.0642 34.4098 43.3731 32.7977 42.4564C31.5965 41.761 29.7948 41.4133 27.3924 41.4133H24.9269V53.3618H26.8234C29.131 53.3618 30.9801 52.9982 32.371 52.2712C34.2675 51.2913 35.2158 49.7108 35.2158 47.5298ZM48.1248 71H43.7627V37.8098H48.1248V71ZM71.8281 71H53.8105V37.8098H71.8281V41.6029H58.1727V51.0859H71.4013V54.879H58.1727V67.2068H71.8281V71ZM105.057 72.2802L80.2594 46.7237V71H75.8972V36.6244L100.837 61.849V37.8098H105.057V72.2802ZM136.462 54.2152C136.462 59.6837 134.755 63.8878 131.342 66.8275C128.117 69.6092 123.724 71 118.16 71H110.764V37.8098H118.682C124.087 37.8098 128.354 39.169 131.484 41.8874C134.803 44.7639 136.462 48.8732 136.462 54.2152ZM132.1 54.2152C132.1 49.9479 130.773 46.7395 128.117 44.59C125.683 42.5986 122.27 41.6029 117.876 41.6029H115.126V67.2068H118.255C122.206 67.2068 125.431 66.1637 127.928 64.0775C130.709 61.7383 132.1 58.4509 132.1 54.2152Z" fill="black"/></svg>
+
+<showcase-view>
+	<showcase-item-view class="hideable-screen push-hideable push-hidden">
+		<x-layout _for="content" style="aspect-ratio: 496 / 896;">
+			<video src="showcase-1.mp4" style="aspect-ratio: 496 / 896;" disablepictureinpicture playsinline muted preload></video>
+			<x-label>Serrini Online ZtoryNight&#13;&#10; - The Room of True Love</x-label>
+			</x-layout>
+		</showcase-item-view>
+	<showcase-item-view class="hideable-screen push-hideable landscape push-hidden">
+		<x-layout _for="content" style="aspect-ratio: 1920 / 1080;">
+			<video src="showcase-2.mp4" style="aspect-ratio: 1920 / 1080;" disablepictureinpicture playsinline muted preload></video>
+			</x-layout>
+		</showcase-item-view>
+	<showcase-item-view class="hideable-screen push-hideable push-hidden">
+		<x-layout _for="content" style="aspect-ratio: 496 / 896;">
+			<video src="showcase-3.mp4" style="aspect-ratio: 496 / 896;" disablepictureinpicture playsinline muted preload></video>
+			<x-label>Women In Work</x-label>
+			</x-layout>
+		</showcase-item-view>
+	<showcase-item-view class="hideable-screen push-hideable landscape push-hidden">
+		<x-layout _for="content" style="aspect-ratio: 1920 / 1080;">
+			<video src="showcase-4.mp4" style="aspect-ratio: 1920 / 1080;" disablepictureinpicture playsinline muted preload></video>
+			</x-layout>
+		</showcase-item-view>
+
+	</showcase-view>
+
+<x-layout _for="content" class="hideable-screen">
+	<services-display>
+		<ul>
+			<li>mobile apps</li>
+			<li>web apps</li>
+			<li>websites</li>
+			<li>api integrations</li>
+			<li>platform integrations</li>
+			</ul>
+		</services-display>
+	</x-layout>
+
+<x-layout _for="content">
+	<hook-display>
+		<p><span>with products that we build,<i></i></span><span>founders have raised millions</span></p>
+		<p>
+			our friends have been invested by
+			<ul>
+				<li>Y Combinator</li>
+				<li>Entrepreneur First</li>
+				<li>Outlier Ventures</li>
+				<li>Hong Kong Science and Technology Parks</li>
+				</ul>
+			</p>
+		</hook-display>
+	<hook-display>
+		<p><span>— nothing better than working<i></i></span><span>products and happy users</span></p>
+		</hook-display>
+
+	<actions-view>
+		<x-label><span>talk to us! we want<i></i></span><span>to help you too.</span></x-label>
+		<x-layout>
+			<span>
+			<a href="#hello@founders-friend.com">email</a>
+			|
+			<a href="#+85295170596">whatsapp</a>
+			</span>
+			<span>
+			|
+			<a href="https://wa.me/85295170596?text=Hi%20Founders'%20Friend%2C%20I'd%20like%20your%20help." target="_blank">free consultation</a>
+			</span>
+			</x-layout>
+		<svg _for="logo" width="228" height="73" viewBox="0 0 228 73" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.4522 5.60293H4.64599V15.0859H16.1203V18.879H4.64599V35H0.283843V1.80976H16.4522V5.60293ZM53.6127 18.4049C53.6127 23.336 51.969 27.4611 48.6816 30.7801C45.4258 34.0675 41.3323 35.7112 36.4012 35.7112C31.4385 35.7112 27.2344 34.0675 23.7889 30.7801C20.3751 27.4611 18.6681 23.336 18.6681 18.4049C18.6681 13.695 20.4067 9.63317 23.8837 6.21932C27.3608 2.80546 31.5333 1.09854 36.4012 1.09854C41.1743 1.09854 45.2361 2.80546 48.5868 6.21932C51.9374 9.63317 53.6127 13.695 53.6127 18.4049ZM49.298 18.4049C49.298 14.7381 48.0652 11.6088 45.5996 9.01678C43.1341 6.42478 40.0363 5.12878 36.3064 5.12878C32.4184 5.12878 29.2416 6.40898 26.776 8.96937C24.3105 11.5298 23.0777 14.6433 23.0777 18.31C23.0777 22.1032 24.3737 25.2642 26.9657 27.793C29.5577 30.3218 32.6712 31.5861 36.3064 31.5861C39.9415 31.5861 43.0076 30.3218 45.5048 27.793C48.0336 25.2326 49.298 22.1032 49.298 18.4049ZM81.6036 22.7196C81.6036 26.5128 80.5763 29.5947 78.5217 31.9655C76.3406 34.4626 73.3377 35.7112 69.5129 35.7112C65.6881 35.7112 62.6852 34.4626 60.5041 31.9655C58.4495 29.6263 57.4222 26.5444 57.4222 22.7196V1.80976H61.7369V22.1506C61.7369 24.9955 62.2743 27.224 63.349 28.8361C64.645 30.7959 66.6996 31.7758 69.5129 31.7758C72.3262 31.7758 74.3808 30.8117 75.6768 28.8835C76.7515 27.2714 77.2889 25.0271 77.2889 22.1506V1.80976H81.6036V22.7196ZM116.448 36.2802L91.65 10.7237V35H87.2878V0.624391L112.228 25.849V1.80976H116.448V36.2802ZM147.853 18.2152C147.853 23.6837 146.146 27.8878 142.732 30.8275C139.508 33.6092 135.114 35 129.551 35H122.154V1.80976H130.073C135.478 1.80976 139.745 3.16898 142.874 5.88742C146.193 8.7639 147.853 12.8732 147.853 18.2152ZM143.491 18.2152C143.491 13.9479 142.163 10.7395 139.508 8.59005C137.074 6.59864 133.66 5.60293 129.266 5.60293H126.516V31.2068H129.646C133.597 31.2068 136.821 30.1637 139.318 28.0775C142.1 25.7383 143.491 22.4509 143.491 18.2152ZM170.13 35H152.113V1.80976H170.13V5.60293H156.475V15.0859H169.703V18.879H156.475V31.2068H170.13V35ZM195.299 35H190.225L180.553 20.7756H178.561V35H174.199V1.80976H179.699C181.849 1.80976 183.619 1.90459 185.01 2.09425C186.401 2.25229 187.76 2.71064 189.087 3.46927C190.415 4.19629 191.411 5.27103 192.075 6.69347C192.738 8.08429 193.07 9.68059 193.07 11.4823C193.07 13.695 192.312 15.6548 190.794 17.3618C189.309 19.0371 187.412 20.1118 185.105 20.586L195.299 35ZM188.85 11.5298C188.85 9.0642 188.044 7.37307 186.432 6.45639C185.231 5.76098 183.429 5.41327 181.027 5.41327H178.561V17.3618H180.458C182.765 17.3618 184.615 16.9982 186.005 16.2712C187.902 15.2913 188.85 13.7108 188.85 11.5298ZM217.311 25.1852C217.311 28.2197 216.237 30.7327 214.087 32.7241C211.938 34.7155 209.282 35.7112 206.122 35.7112C204.004 35.7112 201.933 35.1422 199.91 34.0043C199.12 33.5618 197.808 32.6293 195.975 31.2068L198.488 27.7456C200.226 29.0732 201.475 29.9582 202.234 30.4008C203.656 31.191 205.094 31.5861 206.548 31.5861C208.35 31.5861 209.836 31.033 211.005 29.9266C212.175 28.8203 212.76 27.4295 212.76 25.7541C212.76 24.1737 212.017 22.846 210.531 21.7713C209.772 21.234 208.334 20.5543 206.216 19.7325L203.846 18.8316C201.633 17.9781 200.005 16.935 198.962 15.7022C197.761 14.2798 197.16 12.4148 197.16 10.1073C197.16 7.42049 198.093 5.25522 199.958 3.61151C201.854 1.9362 204.146 1.09854 206.833 1.09854C208.729 1.09854 210.373 1.36722 211.764 1.90459C213.155 2.41034 214.482 3.248 215.747 4.41756L213.281 7.784C212.428 6.8041 211.4 6.06127 210.199 5.55551C208.998 5.01815 207.813 4.74946 206.643 4.74946C205.284 4.74946 204.114 5.27103 203.134 6.31415C202.186 7.32566 201.712 8.49522 201.712 9.82283C201.712 11.0872 202.107 12.1461 202.897 12.9996C203.53 13.6634 204.399 14.2166 205.505 14.6591L207.923 15.6074C211.811 17.0931 214.387 18.5945 215.652 20.1118C216.758 21.471 217.311 23.1621 217.311 25.1852ZM227.02 7.97366C227.02 9.26966 226.688 10.5182 226.025 11.7194C225.361 12.889 224.46 13.8531 223.322 14.6117L221.852 12.6203C222.8 11.7352 223.433 10.945 223.749 10.2496C224.096 9.55415 224.27 8.73229 224.27 7.784C224.27 7.37307 224.191 7.136 224.033 7.07278C223.97 7.04117 223.796 7.02537 223.512 7.02537H221.568V1.80976H227.02V7.97366ZM16.4522 41.6029H4.64599V51.0859H16.1203V54.879H4.64599V71H0.283843V37.8098H16.4522V41.6029ZM41.6642 71H36.5909L26.9183 56.7756H24.9269V71H20.5647V37.8098H26.0648C28.2143 37.8098 29.9844 37.9046 31.3752 38.0942C32.7661 38.2523 34.1253 38.7106 35.4529 39.4693C36.7805 40.1963 37.7762 41.271 38.44 42.6935C39.1038 44.0843 39.4357 45.6806 39.4357 47.4823C39.4357 49.695 38.6771 51.6548 37.1598 53.3618C35.6742 55.0371 33.7776 56.1118 31.4701 56.586L41.6642 71ZM35.2158 47.5298C35.2158 45.0642 34.4098 43.3731 32.7977 42.4564C31.5965 41.761 29.7948 41.4133 27.3924 41.4133H24.9269V53.3618H26.8234C29.131 53.3618 30.9801 52.9982 32.371 52.2712C34.2675 51.2913 35.2158 49.7108 35.2158 47.5298ZM48.1248 71H43.7627V37.8098H48.1248V71ZM71.8281 71H53.8105V37.8098H71.8281V41.6029H58.1727V51.0859H71.4013V54.879H58.1727V67.2068H71.8281V71ZM105.057 72.2802L80.2594 46.7237V71H75.8972V36.6244L100.837 61.849V37.8098H105.057V72.2802ZM136.462 54.2152C136.462 59.6837 134.755 63.8878 131.342 66.8275C128.117 69.6092 123.724 71 118.16 71H110.764V37.8098H118.682C124.087 37.8098 128.354 39.169 131.484 41.8874C134.803 44.7639 136.462 48.8732 136.462 54.2152ZM132.1 54.2152C132.1 49.9479 130.773 46.7395 128.117 44.59C125.683 42.5986 122.27 41.6029 117.876 41.6029H115.126V67.2068H118.255C122.206 67.2068 125.431 66.1637 127.928 64.0775C130.709 61.7383 132.1 58.4509 132.1 54.2152Z" fill="black"/></svg>
+		</actions-view>
+	</x-layout>
+
+<script>
+	var _html = document .documentElement
+	var _body = document .body
+	var _primary_content = document .querySelector ('x-layout[_for=content].hideable-screen')
+	var [ _showcase_1, _showcase_2, _showcase_3, _showcase_4 ] = document .querySelectorAll ('showcase-item-view')
+	var [ _showcase_video_1, _showcase_video_2, _showcase_video_3, _showcase_video_4 ] = document .querySelectorAll ('showcase-item-view video')
+	var [ _email_hyperlink, _whatsapp_hyperlink ] = document .querySelectorAll ('a')
+
+
+	var sleep_ = _duration => new Promise (_resolve_fn => setTimeout (_resolve_fn, _duration))
+
+	var wait_video_load_ = _video =>
+		new Promise (_resolve_fn => {
+			if (_video .readyState === 4) {
+				;_resolve_fn () }
+			else {
+				;_video .addEventListener ('canplaythrough', _resolve_fn) } } )
+
+	var clipboard_copy_ = string => {
+		if (navigator .clipboard && window .isSecureContext) {
+			return navigator .clipboard .writeText (string) }
+		else {
+			let _text_area = document .createElement('textarea');
+			;_text_area .value = string;
+			;_text_area .style .position = 'fixed'
+			;_text_area .style .left = '-999999px'
+			;_text_area .style .top = '-999999px'
+			;document .body .appendChild (_text_area)
+			;_text_area .focus ()
+			;_text_area .select ()
+			return new Promise ((resolve, reject) => {
+				;document .execCommand ('copy') ? resolve () : reject ()
+				;_text_area .remove () } ) } }
+
+
+	;_email_hyperlink .addEventListener ('click', _ => {
+		;clipboard_copy_ (_email_hyperlink .getAttribute ('href') .split ('#') .slice (1) .join (''))
+		;Promise .resolve ()
+		.then (_ => {
+			;_email_hyperlink .setAttribute ('copied', '') } )
+		.then (_ => sleep_ (2000))
+		.then (_ => {
+			;_email_hyperlink .removeAttribute ('copied') } ) } )
+	;_whatsapp_hyperlink .addEventListener ('click', _ => {
+		;clipboard_copy_ (_whatsapp_hyperlink .getAttribute ('href') .split ('#') .slice (1) .join (''))
+		;Promise .resolve ()
+		.then (_ => {
+			;_whatsapp_hyperlink .setAttribute ('copied', '') } )
+		.then (_ => sleep_ (2000))
+		.then (_ => {
+			;_whatsapp_hyperlink .removeAttribute ('copied') } ) } )
+
+
+
+	;Promise .resolve ()
+	.then (_ =>
+		Promise .all
+		(
+		[ sleep_ (2000)
+		, wait_video_load_ (_showcase_video_1)
+		/*, wait_video_load_ (_showcase_video_2)
+		, wait_video_load_ (_showcase_video_3)
+		, wait_video_load_ (_showcase_video_4)*/ ] ) )
+	.then (_ => {
+		;_html .setAttribute ('style', 'background-color: #FEDFE1;')
+		;_body .setAttribute ('style', 'background-color: #FEDFE1;')
+		;_primary_content .classList .add ('hidden')
+		} )
+	.then (_ => sleep_ (150))
+	.then (_ => {
+		;_showcase_1 .classList .remove ('push-hidden')
+		;_showcase_video_1 .pause ()
+		;_showcase_video_1 .currentTime = 0
+		;_showcase_video_1 .play ()
+		} )
+	.then (_ => sleep_ (6850))
+	.then (_ => {
+		;_html .setAttribute ('style', 'background-color: #000000;')
+		;_body .setAttribute ('style', 'background-color: #000000;')
+		;_body .setAttribute ('dark', '')
+		;_showcase_1 .classList .add ('hidden')
+		} )
+	.then (_ => sleep_ (150))
+	.then (_ => {
+		;_showcase_2 .classList .remove ('push-hidden')
+		;_showcase_video_2 .pause ()
+		;_showcase_video_2 .currentTime = 0
+		;_showcase_video_2 .play ()
+		} )
+	.then (_ => sleep_ (8200))
+	.then (_ => {
+		;_html .setAttribute ('style', 'background-color: #A8D8B9;')
+		;_body .setAttribute ('style', 'background-color: #A8D8B9;')
+		;_body .removeAttribute ('dark')
+		;_showcase_2 .classList .add ('hidden')
+		} )
+	.then (_ => sleep_ (150))
+	.then (_ => {
+		;_showcase_3 .classList .remove ('push-hidden')
+		;_showcase_video_3 .pause ()
+		;_showcase_video_3 .currentTime = 0
+		;_showcase_video_3 .play ()
+		} )
+	.then (_ => sleep_ (9400))
+	.then (_ => {
+		;_html .setAttribute ('style', 'background-color: #8F77B5;')
+		;_body .setAttribute ('style', 'background-color: #8F77B5;')
+		;_showcase_3 .classList .add ('hidden')
+		} )
+	.then (_ => sleep_ (150))
+	.then (_ => {
+		;_showcase_4 .classList .remove ('push-hidden')
+		;_showcase_video_4 .pause ()
+		;_showcase_video_4 .currentTime = 0
+		;_showcase_video_4 .play ()
+		} )
+	.then (_ => sleep_ (9700))
+	.then (_ => {
+		;_html .removeAttribute ('style')
+		;_body .removeAttribute ('style')
+		;_showcase_4 .classList .add ('hidden')
+		} )
+	.then (_ => sleep_ (1200))
+	.then (_ => {
+		;_primary_content .classList .add ('unhidden')
+		} )
+	</script>
