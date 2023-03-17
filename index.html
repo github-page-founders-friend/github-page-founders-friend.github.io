@@ -15,7 +15,8 @@
 <meta property="og:url" content="https://founders-friend.com">
 
 <link rel="canonical" href="https://founders-friend.com">
-<link rel="icon" type="image/png" sizes="48x48" href="/icon.png">
+<link rel="icon" type="image/png" sizes="48x48" href="icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#A5DEE4">
 
 <link rel="preload" href="SeoulHangang CM-subset.woff2" as="font" type="font/woff2" crossorigin>
@@ -365,12 +366,14 @@
 		margin-left: 50px;
 		margin-right: 50px; }
 	actions-view > x-layout a {
-		position: relative; }
+		position: relative;
+		margin: -20px;
+		padding: 20px; }
 
 	actions-view > x-layout a:after {
 		content: 'copied';
 		position: absolute;
-		top: calc(100% + 4px);
+		top: calc(100% - 16px);
 		left: 50%;
 		transform: translateX(-50%);
 		background: #000000;
@@ -386,6 +389,16 @@
 		transition-timing-function: linear;
 		opacity: 0;
 		z-index: 1; }
+
+	@media (max-width: 445px) {
+		actions-view > x-layout span:first-of-type a {
+			padding-bottom: 0;
+			padding-bottom: 0; }
+		actions-view > x-layout span:first-of-type + span a {
+			padding-top: 0;
+			padding-top: 0; }
+		actions-view > x-layout a:after {
+			top: calc(100% + 4px); } }
 
 	body[dark] actions-view > x-layout a:after {
 		background: #DDDDDD;
